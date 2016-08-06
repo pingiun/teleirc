@@ -173,7 +173,7 @@ exports.parseMsg = function(msg, myUser, tg, callback) {
     // TODO: Telegram code should not have to deal with IRC channels at all
 
     var channel = config.channels.filter(function(channel) {
-        return channel.tgGroup === msg.chat.title;
+        return channel.tgGroup === msg.chat.title || channel.tgChatId === msg.chat.id;
     })[0];
 
     if (!channel) {
