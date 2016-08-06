@@ -41,7 +41,7 @@ var init = function(msgCallback) {
             logger.debug('got irc msg:', message);
             msgCallback({
                 protocol: 'irc',
-                channel: message.channel,
+                channel: channel,
                 user: user,
                 text: message.text
             });
